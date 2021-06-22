@@ -7,10 +7,19 @@ const rootReducer = combineReducers({
 })
 
 
-
-export const store = createStore( rootReducer, applyMiddleware(thunk))
-export type AppStoreType = typeof store
 export type AppStateType = ReturnType<typeof rootReducer>
+export const store = createStore( rootReducer, applyMiddleware(thunk))
+
+
+store.subscribe(() => {
+    localStorage.setItem('app-state', JSON.stringify(store.getState()))
+    localStorage.setItem('value', JSON.stringify(store.getState().counter.value))
+})
+
+
+
+export type AppStoreType = typeof store
+
 
 
 

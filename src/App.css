@@ -1,3 +1,9 @@
+.container{
+   height: 730px;
+   background-image: url("http://wallpapers1.ru/cosmos/data/space_wallpapers1_ru80.jpg") ;
+}
+
+
 .displayStyles{
 
     border-radius: 10px;

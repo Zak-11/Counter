@@ -29,7 +29,6 @@ export function App() {
 
 
     let increment = () => {
-
         if (maxValue === value) {
             return
         }

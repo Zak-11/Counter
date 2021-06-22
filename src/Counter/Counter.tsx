@@ -9,18 +9,18 @@ export type propsType = {
     resetCount: () => void
     maxValue: number
 }
-export function Counter ( props: propsType){
 
+export function Counter(props: propsType) {
 
 
     return (
 
 
-            <Buttons   increment={props.increment}
-                                resetCount={props.resetCount}
-                                maxValue={props.maxValue}
-                                value={props.value}
-                     />
+        <Buttons increment={props.increment}
+                 resetCount={props.resetCount}
+                 maxValue={props.maxValue}
+                 value={props.value}
+        />
 
     )
 }
