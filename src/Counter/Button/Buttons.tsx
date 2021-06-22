@@ -6,7 +6,7 @@ export type CounterPropsButtons = {
     increment: () => void
     resetCount: () => void
     maxValue: number
-    count: number
+    value: number
 }
 
 
@@ -17,13 +17,13 @@ export function Buttons(props:CounterPropsButtons) {
         <div className={"displayStyles"}>
         <div className={"displayStyle"}>
 
-                <span className={props.count === 5 ? "stopCounterStyle"  : "counterStyle"}>{props.count} </span>
+                <span className={props.value === 5 ? "stopCounterStyle"  : "counterStyle"}>{props.value} </span>
             </div>
           <div className={"butTonStyle"}>
-            <button disabled={props.count === props.maxValue} className={"butIncr"} onClick={props.increment}>inc</button>
+            <button disabled={props.value === props.maxValue} className={"butIncr"} onClick={props.increment}>inc</button>
 
 
-            <button disabled={props.count === 0} className={"butRes"} onClick={props.resetCount}>reset</button>
+            <button disabled={props.value === 0} className={"butRes"} onClick={props.resetCount}>reset</button>
 
           </div>
 </div>

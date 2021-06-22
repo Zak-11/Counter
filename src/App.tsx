@@ -5,24 +5,22 @@ import {Counter} from "./Counter/Counter";
 
 export function App() {
 
-
-
     let maxValue = 5
 
-    const [count, setCount] = useState(0)
+    const [value, setValue] = useState(0)
 
    useEffect(() => {
 
        let valueAsString = localStorage.getItem('counterValue')
        if (valueAsString){
            let newValue = JSON.parse(valueAsString)
-           setCount(newValue)
+           setValue(newValue)
        }
     },[])
 
 
     useEffect(() =>{
-        localStorage.setItem('counterValue', JSON.stringify(count))
+        localStorage.setItem('counterValue', JSON.stringify(value))
 
 
     })
@@ -32,19 +30,19 @@ export function App() {
 
     let increment = () => {
 
-        if (maxValue === count) {
+        if (maxValue === value) {
             return
         }
-        setCount(count + 1)
+        setValue( value + 1)
     }
 
-    const resetCount = () => setCount(0)
+    const resetCount = () => setValue(0)
 
 
     return (
 
         <Counter increment={increment}
-                 count={count}
+                 value={value}
                  resetCount={resetCount}
                  maxValue={maxValue}
         />
