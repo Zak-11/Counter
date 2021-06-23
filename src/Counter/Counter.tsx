@@ -5,8 +5,8 @@ import {Buttons} from "./Button/Buttons";
 
 export type propsType = {
     value: number
-    increment: () => void
-    resetCount: () => void
+    incMender: () => void
+    reset: () => void
     maxValue: number
 }
 
@@ -16,11 +16,12 @@ export function Counter(props: propsType) {
     return (
 
 
-        <Buttons increment={props.increment}
-                 resetCount={props.resetCount}
+        <Buttons
+
+                 reset={props.reset}
                  maxValue={props.maxValue}
                  value={props.value}
-        />
+                 incMender={props.incMender}/>
 
     )
 }

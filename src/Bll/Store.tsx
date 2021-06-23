@@ -11,10 +11,12 @@ export type AppStateType = ReturnType<typeof rootReducer>
 export const store = createStore( rootReducer, applyMiddleware(thunk))
 
 
+/*
 store.subscribe(() => {
     localStorage.setItem('app-state', JSON.stringify(store.getState()))
     localStorage.setItem('value', JSON.stringify(store.getState().counter.value))
 })
+*/
 
 
 
