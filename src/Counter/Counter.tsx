@@ -16,9 +16,7 @@ export function Counter(props: propsType) {
     return (
 
 
-        <Buttons
-
-                 reset={props.reset}
+        <Buttons reset={props.reset}
                  maxValue={props.maxValue}
                  value={props.value}
                  incMender={props.incMender}/>

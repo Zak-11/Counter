@@ -5,7 +5,6 @@ import {AppStateType} from "./Bll/Store";
 import {incValuesTC, resetAC, setValueFromLocalStorageTC} from "./Bll/Reduser-Counter";
 
 
-
 export function App() {
 
     const value = useSelector<AppStateType, number>(state => state.counter.value)
@@ -15,7 +14,7 @@ export function App() {
 
     useEffect(() => {
         dispatch(setValueFromLocalStorageTC())
-    }, [])
+    },[])
 
 
     const incMender = () => {
@@ -25,50 +24,17 @@ export function App() {
     const reset = () => {
         dispatch(resetAC())
     }
-     let maxValue = 5
-
-    /*const [value1, setValue] = useState(0)
-
-    useEffect(() => {
-
-         let valueAsString = localStorage.getItem('counterValue')
-         if (valueAsString){
-             let newValue = JSON.parse(valueAsString)
-             setValue(newValue)
-         }
-      },[])*!/
+    let maxValue = 5
 
 
-   useEffect(() =>{
-         localStorage.setItem('counterValue', JSON.stringify(value))
+    return (
 
-
-     })
-
-*/
-/*
-    let increment = () => {
-        if (maxValue === value) {
-            return
-        }
-        setValue(value + 1)
-
-
-        const resetCount = () => setValue(0)
-     */
-
-
-        return (
-
-            <Counter
-                     value={value}
-                     maxValue={maxValue}
-                     incMender={incMender}
-                     reset={reset}/>
-
-        )
-
-
-    }
+        <Counter
+            value={value}
+            maxValue={maxValue}
+            incMender={incMender}
+            reset={reset}/>
+    )
+}
 
 
